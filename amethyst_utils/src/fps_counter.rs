@@ -27,7 +27,7 @@ use crate::circular_buffer::CircularBuffer;
 /// ```rust
 /// # use amethyst_utils::fps_counter::FpsCounter;
 /// # use amethyst_core::ecs::{World, WorldExt};
-/// # let mut world = World::new();
+/// # let mut world = World::default();
 /// # let counter = FpsCounter::new(2);
 /// # world.insert(counter);
 /// let mut counter = world.write_resource::<FpsCounter>();

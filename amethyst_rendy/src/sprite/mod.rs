@@ -452,15 +452,14 @@ impl SpriteGrid {
 ///
 /// Such a spritesheet description can be loaded using a `Loader` by passing it the handle of the corresponding loaded texture.
 /// ```rust,no_run
-/// # use amethyst_core::ecs::{World, WorldExt};
+/// # use amethyst_core::ecs::{World, Resources};
 /// # use amethyst_assets::{Loader, AssetStorage};
 /// # use amethyst_rendy::{sprite::{SpriteSheetFormat, SpriteSheet}, Texture, formats::texture::ImageFormat};
 /// #
-/// # fn load_sprite_sheet() {
-/// #   let world = World::new(); // Normally, you would use Amethyst's world
-/// #   let loader = data.resources.get::<Loader>().unwrap();
-/// #   let spritesheet_storage = world.read_resource::<AssetStorage<SpriteSheet>>();
-/// #   let texture_storage = world.read_resource::<AssetStorage<Texture>>();
+/// # fn load_sprite_sheet(world: &World, resources: &Resources) {
+/// #   let loader = resources.get::<Loader>().unwrap();
+/// #   let spritesheet_storage = resources.get::<AssetStorage<SpriteSheet>>().unwrap();
+/// #   let texture_storage = resources.get::<AssetStorage<Texture>>().unwrap();
 /// let texture_handle = loader.load(
 ///     "my_texture.png",
 ///     ImageFormat(Default::default()),
